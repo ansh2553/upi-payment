@@ -4,40 +4,46 @@
   <title>Free Fire Tournament Payment</title>
   <style>
     body {
-      background: #0f0f0f;
-      color: #fff;
+      background: #121212;
+      color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      text-align: center;
     }
     h1 {
       color: #00ffae;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      color: #cccccc;
     }
     .button {
-      background: #00ffae;
+      background-color: #00ffae;
       color: #000;
       padding: 15px 30px;
       font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
       margin-top: 20px;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
     .button:hover {
-      background: #00c790;
+      background-color: #00c79a;
     }
   </style>
   <script>
-    function redirectToPayment() {
+    function payAndRedirect() {
       window.location.href = "upi://pay?pa=sujalgupta4r@oksbi&pn=Sujal%20Gupta&am=200&cu=INR";
-      
-      setTimeout(function () {
-        const confirmRedirect = confirm("Payment complete? Click OK to go to the registration form.");
-        if (confirmRedirect) {
+
+      setTimeout(() => {
+        const proceed = confirm("Kya aapne ₹200 ka payment kar liya? Agar haan, OK dabaye to registration form khulega.");
+        if (proceed) {
           window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdGCcp9NM2Txrpml9gGLAQRbp9gVPH2PKUMbw_FX73tuIxp5A/viewform?usp=dialog";
         }
       }, 3000);
@@ -45,8 +51,8 @@
   </script>
 </head>
 <body>
-  <h1>Free Fire Tournament Entry</h1>
-  <p>Pay ₹200 to join the tournament</p>
-  <button class="button" onclick="redirectToPayment()">Pay Now</button>
+  <h1>Join Free Fire Tournament</h1>
+  <p>Entry Fee: ₹200 via UPI</p>
+  <button class="button" onclick="payAndRedirect()">Pay Now</button>
 </body>
 </html>
