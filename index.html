@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pay & Register</title>
+  <title>Free Fire Tournament Payment</title>
   <style>
     body {
-      background-color: #121212;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 100px 20px;
+      background: #0f0f0f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    .pay-button, .form-button {
-      display: inline-block;
-      background-color: #00c853;
-      color: white;
-      border: none;
+    h1 {
+      color: #00ffae;
+    }
+    .button {
+      background: #00ffae;
+      color: #000;
       padding: 15px 30px;
       font-size: 18px;
-      border-radius: 8px;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 15px #00c853;
-      margin: 20px 10px;
-      transition: transform 0.2s;
+      margin-top: 20px;
+      transition: background 0.3s ease;
     }
-    .pay-button:hover, .form-button:hover {
-      transform: scale(1.05);
+    .button:hover {
+      background: #00c790;
     }
   </style>
+  <script>
+    function redirectToPayment() {
+      window.location.href = "upi://pay?pa=sujalgupta4r@oksbi&pn=Sujal%20Gupta&am=200&cu=INR";
+      
+      setTimeout(function () {
+        const confirmRedirect = confirm("Payment complete? Click OK to go to the registration form.");
+        if (confirmRedirect) {
+          window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdGCcp9NM2Txrpml9gGLAQRbp9gVPH2PKUMbw_FX73tuIxp5A/viewform?usp=dialog";
+        }
+      }, 3000);
+    }
+  </script>
 </head>
 <body>
-
-  <h1>Pay ₹200 to Join the Tournament</h1>
-
-  <!-- UPI Payment Button -->
-  <a class="pay-button" href="upi://pay?pa=sujalgupta4r@oksbi&pn=Sujal%20Gupta&am=200">
-    Pay Now via UPI
-  </a>
-
-  <p style="margin-top: 40px;">After payment, click below to complete your registration:</p>
-
-  <!-- Link to Google Form -->
-  <a class="form-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdGCcp9NM2Txrpml9gGLAQRbp9gVPH2PKUMbw_FX73tuIxp5A/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-    Complete Registration
-  </a>
-
+  <h1>Free Fire Tournament Entry</h1>
+  <p>Pay ₹200 to join the tournament</p>
+  <button class="button" onclick="redirectToPayment()">Pay Now</button>
 </body>
 </html>
