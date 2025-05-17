@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pay & Register</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .pay-button, .form-button {
+      display: inline-block;
+      background-color: #00c853;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px #00c853;
+      margin: 20px 10px;
+      transition: transform 0.2s;
+    }
+    .pay-button:hover, .form-button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pay ₹200 to Join the Tournament</h1>
+
+  <!-- UPI Payment Button -->
+  <a class="pay-button" href="upi://pay?pa=sujalgupta4r@oksbi&pn=Sujal%20Gupta&am=200">
+    Pay Now via UPI
+  </a>
+
+  <p style="margin-top: 40px;">After payment, click below to complete your registration:</p>
+
+  <!-- Link to Google Form -->
+  <a class="form-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdGCcp9NM2Txrpml9gGLAQRbp9gVPH2PKUMbw_FX73tuIxp5A/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+    Complete Registration
+  </a>
+
+</body>
+</html>
